@@ -1,0 +1,32 @@
+			 spmime README
+
+1.Introduction
+
+A lightweight mime parser written in c++
+
+The spmime code was developed under Linux, but has also been tested under
+Solaris.
+
+You can get the code from the spmime home page:
+
+	http://code.google.com/p/spmime/
+
+2.Building
+
+To build libspmime.so, type
+
+$ make
+
+This will build all the targets include examples. You can run the
+example programs:
+
+$ cd spmime
+$ testlite sample/mix.eml
+
+
+Any and all comments are appreciated.
+
+Enjoy!
+
+				-- Stephen Liu <stephen.nil@gmail.com>
+
