@@ -63,6 +63,21 @@ public:
 
 	static int readFile( const char * path, SP_MimeBuffer * buffer );
 
+	/**
+	 * @brief  get toke from the string
+	 *
+	 * @param  src : the origin string
+	 * @param  index : the index of token, zero base
+	 * @param  dest : output buffer
+	 * @param  len : getToken does not write more than len bytes (including the trailing '\0')
+	 * @param  delimiter : delimiter of token
+	 * @return 0 : success
+	 * @return -1 : index out of bound
+	 * @return -2 : token too long, can't store in output buf
+	 */
+	static int getToken ( const char * src, int index, char * dest, int len,
+			char delimiter = ' ', const char ** next = 0 );
+
 private:
 	SP_MimeUtils();
 };
