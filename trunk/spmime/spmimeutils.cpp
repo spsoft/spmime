@@ -310,6 +310,7 @@ int SP_MimeUtils :: getToken ( const char * src, int index,
 	if( NULL != next ) *next = NULL;
 
 	if ( NULL != pos1 && '\0' != * pos1 ) {
+		if( delimiter == *pos1 ) pos1++;
 		pos2 = strchr ( pos1, delimiter );
 		if ( NULL == pos2 ) {
 			strncpy ( dest, pos1, len );
@@ -319,7 +320,8 @@ int SP_MimeUtils :: getToken ( const char * src, int index,
 			len = ( pos2 - pos1 + 1 ) > len ? len : ( pos2 - pos1 + 1 );
 			strncpy( dest, pos1, len );
 
-			if( NULL != next ) *next = pos2 + 1;
+			while ( isspace( delimiter ) && delimiter == * pos2 && '\0' != * pos2 ) pos2++;
+			if( NULL != next && '\0' != *pos2 ) *next = pos2;
 		}
 	} else {
 		ret = -1;
