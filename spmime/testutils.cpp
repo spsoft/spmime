@@ -70,7 +70,7 @@ int main( int argc, char * argv[] )
 			const char * part2 = NULL;
 
 			SP_MimeUtils::getToken( sampleToken[i], 0, part0, sizeof( part0 ) );
-			SP_MimeUtils::getToken( sampleToken[i], 1, part1, sizeof( part1 ), ' ', &part2 );
+			SP_MimeUtils::getToken( sampleToken[i], 1, part1, sizeof( part1 ), 0, &part2 );
 
 			printf( "[%s] -- [%s %s %s]\n", sampleToken[i], part0, part1, part2 );
 
