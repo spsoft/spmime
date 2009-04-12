@@ -5,11 +5,12 @@ include ../port/port.mk
 
 LIBOBJS = spmimebuffer.o spmimeutils.o spmimeheader.o spmimepart.o \
 		spmimelite.o spmimecodec.o spmimecharset.o \
-		spparseaddr.o spmimeaddr.o spmimetime.o
+		spparseaddr.o spmimeaddr.o spmimetime.o \
+		spmimemodify.o
 
 TARGET = libspmime.a \
 		testutils testlite testcodec \
-		testaddr testtime
+		testaddr testtime testmodify
 
 TARGET_ICU = libspmimeicu.a \
 		testlite_icu
@@ -46,6 +47,9 @@ testaddr: testaddr.o
 	$(LINKER) $(LDFLAGS) $^ -L. -lspmime -o $@
 
 testtime: testtime.o
+	$(LINKER) $(LDFLAGS) $^ -L. -lspmime -o $@
+
+testmodify: testmodify.o
 	$(LINKER) $(LDFLAGS) $^ -L. -lspmime -o $@
 
 clean:

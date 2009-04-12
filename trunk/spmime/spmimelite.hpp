@@ -18,9 +18,9 @@ public:
 
 	SP_MimePart * getRootPart();
 
-private:
 	static int parseHeader( const char * buffer, SP_MimeHeaderList * list );
 
+private:
 	static int parse( const char * buffer, int len, SP_MimePart * part );
 
 	SP_MimePart * mRootPart;
